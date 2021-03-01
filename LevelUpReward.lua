@@ -32,7 +32,7 @@ Config_Gold[80] = 4000000
 Config_ItemId[29] = 5740         -- item granted when reaching level [10] / 5740 is a cosmetic red rocket
 Config_ItemAmount[29] = 5        -- amount of items to be granted when reaching level [10]. Missing amounts are automatically set to 1 if an ItemId is given
 
-local Config_mailText = "! You've done pretty well while advancing on ChromieCraft. Here is a tiny reward to make up for your heroic deeds. Go forth! Kind regards... Chromie"
+local Config_mailText = "!\n \n You've done pretty well while advan- cing on ChromieCraft. Here is a tiny reward to make up for your heroic deeds. Go forth!\n \n Kind regards...\n Chromie"
 
 ------------------------------------------
 -- NO ADJUSTMENTS REQUIRED BELOW THIS LINE
@@ -41,11 +41,8 @@ local Config_mailText = "! You've done pretty well while advancing on ChromieCra
 local PLAYER_EVENT_ON_LEVEL_CHANGE = 13
 
 local function GrantReward(event, player, oldLevel)
-	print("4")
 	if oldLevel ~= nil then
-		print("3")
 		if Config_ItemId[oldLevel + 1] ~= nil then
-			print("1")
 			local playerName = player:GetName()
 			local playerGUID = tostring(player:GetGUID())
 			local itemAmount
@@ -55,13 +52,14 @@ local function GrantReward(event, player, oldLevel)
 				itemAmount = 1
 			end	
 			SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
+			print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." and "..Config_ItemAmount[oldLevel + 1].." of item"..Config_ItemId[oldLevel + 1].."to character "..playerName.." with guid "..playerGUID..".")
 			playerName = nil
 			playerGUID = nil
 		elseif Config_Gold[oldLevel + 1] ~= nil then
-			print("2")
 			local playerName = player:GetName()
 			local playerGUID = tostring(player:GetGUID())
 			SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1])
+			print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
 			playerName = nil
 			playerGUID = nil
 		end
