@@ -29,8 +29,8 @@ Config_Gold[70] = 2000000
 Config_Gold[80] = 4000000
 
 
-Config_ItemId[29] = 5740         -- item granted when reaching level [10] / 5740 is a cosmetic red rocket
-Config_ItemAmount[29] = 5        -- amount of items to be granted when reaching level [10]. Missing amounts are automatically set to 1 if an ItemId is given
+Config_ItemId[29] = 5740         -- item granted when reaching level [29] / 5740 is a cosmetic red rocket
+Config_ItemAmount[29] = 5        -- amount of items to be granted when reaching level [29]. Missing amounts are automatically set to 1 if an ItemId is given
 
 local Config_mailText = "!\n \n You've done pretty well while advan- cing on ChromieCraft. Here is a tiny reward to make up for your heroic deeds. Go forth!\n \n Kind regards...\n Chromie"
 
