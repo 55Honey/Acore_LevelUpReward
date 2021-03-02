@@ -19,18 +19,18 @@ local Config_Gold = {}
 local Config_ItemId = {}
 local Config_ItemAmount = {}
 
-Config_Gold[10] = 10000     -- gold granted when reaching level [10] in copper. 10000 =  1 gold
-Config_Gold[20] = 40000
-Config_Gold[30] = 100000
-Config_Gold[40] = 250000
-Config_Gold[50] = 500000
-Config_Gold[60] = 1000000
-Config_Gold[70] = 2000000
-Config_Gold[80] = 4000000
+Config_Gold[10] = 10000       -- gold granted when reaching level [10] in copper. 10000 =  1 gold. Cost for spells 10-18 (mage): ~1g50s
+Config_Gold[20] = 70000       --  Cost for spells 20-28 (mage): ~11g
+Config_Gold[30] = 180000      --  Cost for spells 20-28 (mage): ~27g
+Config_Gold[40] = 350000      --  Cost for spells 30-38 (mage): ~50g
+Config_Gold[50] = 700000
+Config_Gold[60] = 1400000
+Config_Gold[70] = 2800000
+Config_Gold[80] = 5000000
 
 
-Config_ItemId[29] = 5740         -- item granted when reaching level [29] / 5740 is a cosmetic red rocket
-Config_ItemAmount[29] = 5        -- amount of items to be granted when reaching level [29]. Missing amounts are automatically set to 1 if an ItemId is given
+Config_ItemId[29] = 5740      -- item granted when reaching level [29] / 5740 is a cosmetic red rocket
+Config_ItemAmount[29] = 5     -- amount of items to be granted when reaching level [29]. Missing amounts are automatically set to 1 if an ItemId is given
 
 local Config_mailText = "!\n \n You've done pretty well while advan- cing on ChromieCraft. Here is a tiny reward to make up for your heroic deeds. Go forth!\n \n Kind regards...\n Chromie"
 
