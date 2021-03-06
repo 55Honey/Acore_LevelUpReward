@@ -41,30 +41,30 @@ local Config_mailText = "!\n \n You've done pretty well while advan- cing on Chr
 local PLAYER_EVENT_ON_LEVEL_CHANGE = 13
 
 local function GrantReward(event, player, oldLevel)
-	if oldLevel ~= nil then
-		if Config_ItemId[oldLevel + 1] ~= nil then
-			local playerName = player:GetName()
-			local playerGUID = tostring(player:GetGUID())
-			local itemAmount
-			if Config_ItemAmount[oldLevel + 1] ~= nil then
-				itemAmount = Config_ItemAmount[oldLevel + 1]
-			else
-				itemAmount = 1
-			end	
-			SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
-			print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." and "..Config_ItemAmount[oldLevel + 1].." of item"..Config_ItemId[oldLevel + 1].."to character "..playerName.." with guid "..playerGUID..".")
-			playerName = nil
-			playerGUID = nil
-		elseif Config_Gold[oldLevel + 1] ~= nil then
-			local playerName = player:GetName()
-			local playerGUID = tostring(player:GetGUID())
-			SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1])
-			print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
-			playerName = nil
-			playerGUID = nil
-		end
-	end
-	return false
+    if oldLevel ~= nil then
+        if Config_ItemId[oldLevel + 1] ~= nil then
+            local playerName = player:GetName()
+            local playerGUID = tostring(player:GetGUID())
+            local itemAmount
+            if Config_ItemAmount[oldLevel + 1] ~= nil then
+                itemAmount = Config_ItemAmount[oldLevel + 1]
+            else
+                itemAmount = 1
+            end
+            SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
+            print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." and "..Config_ItemAmount[oldLevel + 1].." of item"..Config_ItemId[oldLevel + 1].."to character "..playerName.." with guid "..playerGUID..".")
+            playerName = nil
+            playerGUID = nil
+        elseif Config_Gold[oldLevel + 1] ~= nil then
+            local playerName = player:GetName()
+            local playerGUID = tostring(player:GetGUID())
+            SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1])
+            print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
+            playerName = nil
+            playerGUID = nil
+        end
+    end
+    return false
 end
 
 RegisterPlayerEvent(PLAYER_EVENT_ON_LEVEL_CHANGE, GrantReward)
