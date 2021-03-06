@@ -25,3 +25,5 @@ A missing Item_Amount always results in *one* item.
 
 `Config_ItemId[29] = 5740` 
 `Config_ItemAmount[29] = 5` sends five rockets to the players when they reach level 29.
+
+Only one kind of item can be awarded per level. Multiple Config_ItemId flags for the same level do not work.
