@@ -1,6 +1,7 @@
 ## LevelUpReward
 LUA script for Azerothcore with ElunaLUA to reward players for reaching certain levels.
 
+Proudly hosted on [ChromieCraft](https://www.chromiecraft.com/)
 
 ## Requirements:
 
