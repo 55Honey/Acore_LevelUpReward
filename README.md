@@ -28,3 +28,14 @@ A missing Item_Amount always results in *one* item.
 `Config_ItemAmount[29] = 5` sends five rockets to the players when they reach level 29.
 
 Only one kind of item can be awarded per level. Multiple Config_ItemId flags for the same level do not work.
+
+## Default config:
+
+1g   at Level 10
+7g   at Level 20
+18g  at Level 30
+35g  at Level 40
+70g  at Level 50
+140g at Level 60
+280g at Level 70
+500g at Level 80
