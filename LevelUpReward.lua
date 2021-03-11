@@ -51,8 +51,11 @@ local function GrantReward(event, player, oldLevel)
             else
                 itemAmount = 1
             end
+            if Config_Gold[oldLevel + 1] == nil then
+                Config_Gold[oldLevel + 1] = 0
+            end
             SendMail("Chromies reward for You!", "Hello "..playerName..Config_mailText, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
-            print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." and "..Config_ItemAmount[oldLevel + 1].." of item"..Config_ItemId[oldLevel + 1].."to character "..playerName.." with guid "..playerGUID..".")
+            print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." and "..Config_ItemAmount[oldLevel + 1].." of item "..Config_ItemId[oldLevel + 1].." to character "..playerName.." with guid "..playerGUID..".")
             playerName = nil
             playerGUID = nil
         elseif Config_Gold[oldLevel + 1] ~= nil then
