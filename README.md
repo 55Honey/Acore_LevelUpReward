@@ -39,3 +39,5 @@ Only one kind of item can be awarded per level. Multiple Config_ItemId flags for
 - 140g at Level 60
 - 280g at Level 70
 - 500g at Level 80
+
+Find me on patreon: https://www.patreon.com/Honeys
