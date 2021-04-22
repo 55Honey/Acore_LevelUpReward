@@ -42,7 +42,7 @@ local Config_mailText = 2
 local Config_mailSubject1 = "Chromies reward for You!"
 local Config_mailText1 = "!\n\nYou've done well while advancing on ChromieCraft. Here is a small reward to celebrate your heroic deeds. Go forth!\n\n Kind regards,\n Chromie"
 
-local Config_mailSubject2A = "Subject: Entering the "
+local Config_mailSubject2A = "Entering the "
 local Config_mailSubject2B = " circle"
 local Config_mailText2A = " and congratulations! \n\nThe Bronze Dragonflight would like to inform you that you were the "
 local Config_mailText2B = " person to reach a level of skill that has made us take notice of you. Go forth!\n\n Kind regards,\n Chromie"
