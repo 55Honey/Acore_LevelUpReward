@@ -3,6 +3,8 @@ LUA script for Azerothcore with ElunaLUA to reward players for reaching certain 
 
 Proudly hosted on [ChromieCraft](https://www.chromiecraft.com/)
 
+Adds a db scheme specified in `Config_customDbName` on first startup.
+
 ## Requirements:
 
 Compile your [Azerothcore](https://github.com/azerothcore/azerothcore-wotlk) with [Eluna Lua](https://www.azerothcore.org/catalogue-details.html?id=131435473).
@@ -11,7 +13,8 @@ The ElunaLua module itself usually doesn't require much setup/config. Just speci
 If the directory was not changed in the ElunaLua config, add the .lua script to your `../lua_scripts/` directory as a subfolder of the worldserver.
 Adjust the top part of the .lua file with the config flags.
 
-`local Config_mailText = 2` 2 is the new, lore-friendly mode which includes a counter. With this flasg set to 2, players will get to know their rank in the mail. 1 sends the original standard letter.
+Decide your mode:
+`local Config_mailText = 2` 2 is the new, lore-friendly mode which includes a counter. With this flag set to 2, players will get to know their rank in the mail. 1 sends the original standard letter.
 
 
 ## Player Usage:
