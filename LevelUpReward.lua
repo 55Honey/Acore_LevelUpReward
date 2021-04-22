@@ -42,8 +42,8 @@ local Config_mailText = 2
 local Config_mailSubject1 = "Chromies reward for You!"
 local Config_mailText1 = "!\n\nYou've done well while advancing on ChromieCraft. Here is a small reward to celebrate your heroic deeds. Go forth!\n\n Kind regards,\n Chromie"
 
-local Config_mailSubject2A = "Entering the "
-local Config_mailSubject2B = " circle"
+local Config_mailSubject2A = "New time level "
+local Config_mailSubject2B = " reached"
 local Config_mailText2A = " and congratulations! \n\nThe Bronze Dragonflight would like to inform you that you were the "
 local Config_mailText2B = " person to reach a level of skill that has made us take notice of you. Go forth!\n\n Kind regards,\n Chromie"
 -- Name of Eluna dB scheme
@@ -120,17 +120,6 @@ local function GrantReward(event, player, oldLevel)
             playerCounterStr = playerCounterStr.."th"
         end
 
-        currentLevelStr = tostring(currentLevel)
-        if string.sub(currentLevelStr, -1) == "1" then
-            currentLevelStr = currentLevelStr.."st"
-        elseif string.sub(currentLevelStr, -1) == "2" then
-            currentLevelStr = currentLevelStr.."nd"
-        elseif string.sub(currentLevelStr, -1) == "3" then
-            currentLevelStr = currentLevelStr.."rd"
-        else
-            currentLevelStr = currentLevelStr.."th"
-        end
-
         if Config_mailText == 2 then
             if Config_ItemId[oldLevel + 1] ~= nil and Config_mailText == 2 then
                 local playerName = player:GetName()
@@ -144,7 +133,7 @@ local function GrantReward(event, player, oldLevel)
                 if Config_Gold[oldLevel + 1] == nil then
                     Config_Gold[oldLevel + 1] = 0
                 end
-                SendMail(Config_mailSubject2A..currentLevelStr..Config_mailSubject2B, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
+                SendMail(Config_mailSubject2A..currentLevel..Config_mailSubject2B, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper and "..Config_ItemAmount[oldLevel + 1].." of item "..Config_ItemId[oldLevel + 1].." to character "..playerName.." with guid "..playerGUID..".")
                 playerName = nil
                 playerGUID = nil
@@ -152,7 +141,7 @@ local function GrantReward(event, player, oldLevel)
             elseif Config_Gold[oldLevel + 1] ~= nil and Config_mailText == 2 then
                 local playerName = player:GetName()
                 local playerGUID = tostring(player:GetGUID())
-                SendMail(Config_mailSubject2A..currentLevelStr..Config_mailSubject2B, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1])
+                SendMail(Config_mailSubject2A..currentLevel..Config_mailSubject2B, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B, playerGUID, 0, 61, 0, Config_Gold[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
                 playerName = nil
                 playerGUID = nil
