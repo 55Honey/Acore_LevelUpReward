@@ -29,7 +29,6 @@ Config_Gold[60] = 1400000
 Config_Gold[70] = 2800000
 Config_Gold[80] = 5000000
 
-
 Config_ItemId[29] = 5740      -- item granted when reaching level [29] / 5740 is a cosmetic red rocket
 Config_ItemAmount[29] = 5     -- amount of items to be granted when reaching level [29]. Missing amounts are automatically set to 1 if an ItemId is given
 Config_ItemId[35] = 34412
@@ -108,7 +107,7 @@ local function GrantReward(event, player, oldLevel)
         local currentLevelStr
         local currentLevel = oldLevel + 1
         LUR_playerCounter[currentLevel] = LUR_playerCounter[currentLevel] + 1
-        CharDBExecute('REPLACE INTO `'..Config_customDbName..'`.`levelup_reward` VALUES ('..currentLevel..', '..LUR_playerCounter[currentLevel]..') ;');
+        CharDBExecute('REPLACE INTO `'..Config_customDbName..'`.`levelup_reward` VALUES ('..currentLevel..', '..LUR_playerCounter[currentLevel]..');');
         playerCounterStr = tostring(LUR_playerCounter[currentLevel])
         if string.sub(playerCounterStr, -1) == "1" then
             playerCounterStr = playerCounterStr.."st"
