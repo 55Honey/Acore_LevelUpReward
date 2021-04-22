@@ -22,8 +22,8 @@ local LUR_playerCounter = {}
 
 Config_Gold[10] = 10000       -- gold granted when reaching level [10] in copper. 10000 =  1 gold. Cost for spells 10-18 (mage): ~1g50s
 Config_Gold[20] = 70000       --  Cost for spells 20-28 (mage): ~11g
-Config_Gold[30] = 180000      --  Cost for spells 20-28 (mage): ~27g
-Config_Gold[40] = 350000      --  Cost for spells 30-38 (mage): ~50g
+Config_Gold[30] = 180000      --  Cost for spells 30-38 (mage): ~27g
+Config_Gold[40] = 350000      --  Cost for spells 40-48 (mage): ~50g
 Config_Gold[50] = 700000
 Config_Gold[60] = 1400000
 Config_Gold[70] = 2800000
