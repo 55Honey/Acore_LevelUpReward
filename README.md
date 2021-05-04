@@ -1,5 +1,5 @@
 ## LevelUpReward
-Lua script for Azerothcore with ElunaLUA to reward players for reaching certain levels.
+Lua script for Azerothcore with ElunaLUA to reward players for reaching certain levels. The ingame mail they receive will also contain their rank to reach this level.
 
 Proudly hosted on [ChromieCraft](https://www.chromiecraft.com/)
 
@@ -16,6 +16,7 @@ Adjust the top part of the .lua file with the config flags.
 Decide your mode:
 `local Config_mailText = 2` 2 is the new, lore-friendly mode which includes a counter. With this flag set to 2, players will get to know their rank in the mail. 1 sends the original standard letter.
 
+If you add this script to an existing server, make sure to populate it's table with meaningful numbers.
 
 ## Player Usage:
 - Play, reach a level set in the config and be rewarded by ingame mail
