@@ -41,7 +41,7 @@ Config_ItemAmount[39] = 5
 
 -- General Settings Config
 local Config_mailText = 2           -- Which text to send in the mail to the player.
-local Config_senderGUID = 1         -- GUID of the player found in CharactersSchema/Characters in Database.
+local Config_senderGUID = 1         -- GUID of the player found in CharactersSchema/Characters in Database. 0 = No sender. "From: Unknown"
 local Config_mailStationery = 41    -- Stationary used in the mail sent to the player. (41 Normal Mail, 61 GM/Blizzard Support, 62 Auction, 64 Valentines, 65 Christmas) Note: Use 62, 64, and 65 At your own risk.
 local Config_maxGMRank = 0          -- Checks the player's assigned GM rank. Anything above the assigned default will not receive mail/be counted for the player counter. Default 0 - Players Only. Max 3 - All GMS/Mods/Etc will receive as well.
 local Config_preventReturn = true   -- Modify's the Mail database to prevent returning of rewards. Note: If you are experiencing server lag after installing this module please disable this option to see if it helps.
@@ -57,8 +57,6 @@ local Config_mailText2C = " level of mastery.\nYour adventures have made me take
 
 -- Name of Eluna dB scheme
 local Config_customDbName = 'ac_eluna';
--- Name of Characters dB scheme | Only used if Config_preventReturn is set to true
-local Config_charactersDbName = 'acore_characters';
 
 ------------------------------------------
 -- NO ADJUSTMENTS REQUIRED BELOW THIS LINE
@@ -86,7 +84,7 @@ local PLAYER_EVENT_ON_LEVEL_CHANGE = 13
 
 local function PreventReturn(playerGUID)
 	if Config_preventReturn == true then
-		CharDBExecute('UPDATE `'..Config_charactersDbName..'.mail` SET `checked` = 4 WHERE `sender` = '..Config_senderGUID..' AND `receiver` = '..playerGUID..' AND `checked` = 0;')
+		CharDBExecute('UPDATE `mail` SET `checked` = 2 WHERE `sender` = '..Config_senderGUID..' AND `receiver` = '..playerGUID..' AND `checked` = 0;')
 	end
 end
 
@@ -105,18 +103,18 @@ local function GrantReward(event, player, oldLevel)
                 if Config_Gold[oldLevel + 1] == nil then
                     Config_Gold[oldLevel + 1] = 0
                 end
-                SendMail(Config_mailSubject1, "Hello "..playerName..Config_mailText1, playerGUID, 0, Config_mailStationery, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
+                SendMail(Config_mailSubject1, "Hello "..playerName..Config_mailText1, playerGUID, Config_senderGUID, Config_mailStationery, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper and "..Config_ItemAmount[oldLevel + 1].." of item "..Config_ItemId[oldLevel + 1].." to character "..playerName.." with guid "..playerGUID..".")
-		  PreventReturn(playerGUID)
+                PreventReturn(playerGUID)
                 playerName = nil
                 playerGUID = nil
                 return false
             elseif Config_Gold[oldLevel + 1] ~= nil then
                 local playerName = player:GetName()
                 local playerGUID = tostring(player:GetGUID())
-                SendMail(Config_mailSubject1, "Hello "..playerName..Config_mailText1, playerGUID, 0, Config_mailStationery, 0, Config_Gold[oldLevel + 1])
+                SendMail(Config_mailSubject1, "Hello "..playerName..Config_mailText1, playerGUID, Config_senderGUID, Config_mailStationery, 0, Config_Gold[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
-		  PreventReturn(playerGUID)
+                PreventReturn(playerGUID)
                 playerName = nil
                 playerGUID = nil
                 return false
@@ -166,7 +164,7 @@ local function GrantReward(event, player, oldLevel)
                 SendMail(Config_mailSubject2, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B..currentLevelStr..Config_mailText2C, playerGUID, Config_senderGUID, Config_mailStationery, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper and "..Config_ItemAmount[oldLevel + 1].." of item "..Config_ItemId[oldLevel + 1].." to character "..playerName.." with guid "..playerGUID..".")
                 PreventReturn(playerGUID)
-		  playerName = nil
+                playerName = nil
                 playerGUID = nil
                 return false
             elseif Config_Gold[oldLevel + 1] ~= nil and Config_mailText == 2 then
@@ -175,7 +173,7 @@ local function GrantReward(event, player, oldLevel)
                 SendMail(Config_mailSubject2, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B..currentLevelStr..Config_mailText2C, playerGUID, Config_senderGUID, Config_mailStationery, 0, Config_Gold[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
                 PreventReturn(playerGUID)
-		  playerName = nil
+                playerName = nil
                 playerGUID = nil
                 return false
             end
