@@ -1,10 +1,16 @@
 --
--- Created By: Honey
+-- Created by IntelliJ IDEA.
+-- User: Silvia
 -- Date: 28/02/2021
+-- Time: 23:16
+-- To change this template use File | Settings | File Templates.
+-- Originally created by Honey for Azerothcore
+-- requires ElunaLua module
+
 -- Updated By: Ragundah
 -- Date: 13/05/2021
--- Requires: ElunaLua module
--- Description: Players will receive rewards when their characters reach the levels in brackets. 
+
+--Players will receive rewards when their characters reach the levels in brackets. 
 ------------------------------------------------------------------------------------------------
 -- ADMIN GUIDE:  -  compile the core with ElunaLua module
 --               -  adjust config in this file
