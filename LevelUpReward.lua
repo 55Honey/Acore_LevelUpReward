@@ -160,7 +160,7 @@ local function GrantReward(event, player, oldLevel)
                 SendMail(Config_mailSubject2, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B..currentLevelStr..Config_mailText2C, playerGUID, Config_senderGUID, Config_mailStationery, 0, Config_Gold[oldLevel + 1],0,Config_ItemId[oldLevel + 1], Config_ItemAmount[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper and "..Config_ItemAmount[oldLevel + 1].." of item "..Config_ItemId[oldLevel + 1].." to character "..playerName.." with guid "..playerGUID..".")
                 PreventReturn(playerGUID)
-				playerName = nil
+		playerName = nil
                 playerGUID = nil
                 return false
             elseif Config_Gold[oldLevel + 1] ~= nil and Config_mailText == 2 then
@@ -169,7 +169,7 @@ local function GrantReward(event, player, oldLevel)
                 SendMail(Config_mailSubject2, "Hello "..playerName..Config_mailText2A..playerCounterStr..Config_mailText2B..currentLevelStr..Config_mailText2C, playerGUID, Config_senderGUID, Config_mailStationery, 0, Config_Gold[oldLevel + 1])
                 print("LevelUpReward has granted "..Config_Gold[oldLevel + 1].." copper to character "..playerName.." with guid "..playerGUID..".")
                 PreventReturn(playerGUID)
-				playerName = nil
+		playerName = nil
                 playerGUID = nil
                 return false
             end
