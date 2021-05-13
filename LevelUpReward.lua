@@ -40,9 +40,9 @@ Config_ItemId[39] = 9312
 Config_ItemAmount[39] = 5
 
 -- General Settings Config
-local Config_mailText = 1           -- Which text to send in the mail to the player.
+local Config_mailText = 2           -- Which text to send in the mail to the player.
 local Config_senderGUID = 1         -- GUID of the player found in CharactersSchema/Characters in Database.
-local Config_mailStationery = 61    -- Stationary used in the mail sent to the player. (41 Normal Mail, 61 GM/Blizzard Support, 62 Auction, 64 Valentines, 65 Christmas) Note: Use 62, 64, and 65 At your own risk.
+local Config_mailStationery = 41    -- Stationary used in the mail sent to the player. (41 Normal Mail, 61 GM/Blizzard Support, 62 Auction, 64 Valentines, 65 Christmas) Note: Use 62, 64, and 65 At your own risk.
 local Config_maxGMRank = 0          -- Checks the player's assigned GM rank. Anything above the assigned default will not receive mail/be counted for the player counter. Default 0 - Players Only. Max 3 - All GMS/Mods/Etc will receive as well.
 local Config_preventReturn = true   -- Modify's the Mail database to prevent returning of rewards. Note: If you are experiencing server lag after installing this module please disable this option to see if it helps.
 
