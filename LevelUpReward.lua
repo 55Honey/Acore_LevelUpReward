@@ -41,7 +41,7 @@ Config_ItemAmount[39] = 5
 
 -- General Settings Config
 local Config_mailText = 2           -- Which text to send in the mail to the player.
-local Config_senderGUID = 1         -- GUID of the player found in CharactersSchema/Characters in Database. 0 = No sender. "From: Unknown"
+local Config_senderGUID = 10667     -- GUID/ID of the Player/Creature. If Config_preventReturn = true then you need to put Creature ID. If it's false Player GUID. 0 = No sender aka "From: Unknown".
 local Config_mailStationery = 41    -- Stationary used in the mail sent to the player. (41 Normal Mail, 61 GM/Blizzard Support, 62 Auction, 64 Valentines, 65 Christmas) Note: Use 62, 64, and 65 At your own risk.
 local Config_maxGMRank = 0          -- Checks the player's assigned GM rank. Anything above the assigned default will not receive mail/be counted for the player counter. Default 0 - Players Only. Max 3 - All GMS/Mods/Etc will receive as well.
 local Config_preventReturn = true   -- Modify's the Mail database to prevent returning of rewards. Note: If you are experiencing server lag after installing this module please disable this option to see if it helps.
@@ -84,7 +84,7 @@ local PLAYER_EVENT_ON_LEVEL_CHANGE = 13
 
 local function PreventReturn(playerGUID)
 	if Config_preventReturn == true then
-		CharDBExecute('UPDATE `mail` SET `checked` = 2 WHERE `sender` = '..Config_senderGUID..' AND `receiver` = '..playerGUID..' AND `checked` = 0;')
+		CharDBExecute('UPDATE `mail` SET `messageType` = 3 WHERE `sender` = '..Config_senderGUID..' AND `receiver` = '..playerGUID..' AND `messageType` = 0;')
 	end
 end
 
