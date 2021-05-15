@@ -163,3 +163,4 @@ local function GrantReward(event, player, oldLevel)
 end
 
 RegisterPlayerEvent(PLAYER_EVENT_ON_LEVEL_CHANGE, GrantReward)
+
