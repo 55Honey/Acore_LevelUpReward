@@ -63,7 +63,7 @@ local Config_customDbName = 'ac_eluna';
 ------------------------------------------
 
 CharDBQuery('CREATE DATABASE IF NOT EXISTS `'..Config_customDbName..'`;');
-CharDBQuery('CREATE TABLE IF NOT EXISTS `'..Config_customDbName..'`.`levelup_reward` (`level` INT(11) NOT NULL, `counter` INT(11) DEFAULT 0, PRIMARY KEY (`level`) );');
+CharDBQuery('CREATE TABLE IF NOT EXISTS `'..Config_customDbName..'`.`levelup_reward` (`level` INT NOT NULL, `counter` INT DEFAULT 0, PRIMARY KEY (`level`) );');
 
 local n
 for n = 2,80,1 do
