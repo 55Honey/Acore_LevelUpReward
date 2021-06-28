@@ -1,7 +1,8 @@
 ## LevelUpReward
 Lua script for Azerothcore with ElunaLUA to reward players for reaching certain levels. The ingame mail they receive will also contain their rank to reach this level.
 
-Proudly hosted on [ChromieCraft](https://www.chromiecraft.com/)
+**Proudly hosted on [ChromieCraft](https://www.chromiecraft.com/)**
+#### Find me on patreon: https://www.patreon.com/Honeys
 
 Adds a db scheme specified in `Config_customDbName` on first startup.
 
