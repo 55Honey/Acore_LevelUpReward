@@ -27,9 +27,11 @@ Config_Gold[10] = 10000       -- gold granted when reaching level [10] in copper
 Config_Gold[20] = 70000       --  Cost for spells 20-28 (mage): ~11g
 Config_Gold[30] = 180000      --  Cost for spells 30-38 (mage): ~27g
 Config_Gold[40] = 350000      --  Cost for spells 40-48 (mage): ~50g
-Config_Gold[50] = 700000
-Config_Gold[60] = 1400000
-Config_Gold[70] = 2800000
+Config_Gold[50] = 650000      --  Cost for spells 50-58 (mage): ~93g
+Config_Gold[61] = 600000
+Config_Gold[65] = 800000
+Config_Gold[71] = 1000000
+Config_Gold[75] = 1800000
 Config_Gold[80] = 5000000
 
 Config_ItemId[29] = 5740      -- item granted when reaching level [29] / 5740 is a cosmetic red rocket
@@ -44,6 +46,10 @@ Config_ItemId[46] = 35565
 Config_ItemAmount[46] = 10
 Config_ItemId[49] = 9313
 Config_ItemAmount[49] = 5
+Config_ItemId[59] = 9314
+Config_ItemAmount[59] = 5
+Config_ItemId[60] = 9315
+Config_ItemAmount[60] = 5
 
 -- General Settings Config
 local Config_mailText = 2           -- Which text to send in the mail to the player.
