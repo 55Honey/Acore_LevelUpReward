@@ -50,6 +50,12 @@ Config_ItemId[59] = 9314
 Config_ItemAmount[59] = 5
 Config_ItemId[60] = 9315
 Config_ItemAmount[60] = 5
+Config_ItemId[64] = 9312
+Config_ItemAmount[64] = 5
+Config_ItemId[69] = 9313
+Config_ItemAmount[69] = 5
+Config_ItemId[70] = 9314
+Config_ItemAmount[70] = 5
 
 -- General Settings Config
 local Config_mailText = 2           -- Which text to send in the mail to the player.
